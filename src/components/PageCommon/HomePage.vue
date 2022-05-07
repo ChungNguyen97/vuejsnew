@@ -5,67 +5,37 @@
     </h3>
     <div class="content">
       <div class="vuejs">
-        <img src="../assets/logo.png" />
-        <img src="../assets/image/avanyou.jpg" alt="" />
-
-        <p>{{ author }}</p>
+        <article>
+          <img src="../../assets/logo.png" />
+          <p>Vue.js</p>
+        </article>
       </div>
 
       <div class="appCyclone">
-        <img src="../assets/image/appcyclone.jpg" alt="" />
+        <img src="../../assets/image/appcyclone.jpg" alt="" />
+        <p>Apps Cyclone</p>
       </div>
-      <!-- <h4>Task cần hoàn thành: </h4>
-    <p>{{ issues }}</p> -->
     </div>
     <div class="btnsControl">
-      <a href="/task">Start with Isuses</a>
-      <a class="product" href="/product">View more product</a>
+      <router-link to="/task">Start with Isuses</router-link>
+      <router-link class="product" to="/product">View more product</router-link>
     </div>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
-import axios from "axios";
-import VueAxios from "vue-axios";
-
-Vue.use(VueAxios, axios);
-
 export default {
   name: "HomePage",
   data() {
     return {
       title: "Vuejs demo by",
       fullname: "Nguyen Van Chung",
-      msg: "Welcome to Your Vue.js App",
-      author: "Evan You",
       data: [],
-      issues: [
-        "Vue CLI",
-        "Component",
-        "Component in-depth",
-        "binding",
-        "Event handling",
-        "Rendering",
-        "Component communication",
-        "Lifecycle hook",
-        "Form input binding",
-        "Routing",
-        "API Calls",
-        "Vuex",
-        "Internationalization",
-      ],
+    
     };
   },
   methods: {
-    getList() {
-      this.axios
-        .get("https://jsonplaceholder.typicode.com/users")
-        .then((response) => {
-          this.data = response.data;
-          console.log(this.data);
-        });
-    },
+
   },
 };
 </script>
@@ -73,16 +43,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
-  /* margin-top: 12%; */
+  margin-top: 80px;
 }
 h3 {
   text-align: center;
-  font-size: 60px;
+  font-size: 48px;
   line-height: 1.25;
   font-weight: 900;
   letter-spacing: -1.5px;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 48px;
 }
 h3 span {
   background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
@@ -132,5 +102,18 @@ h3 span {
 }
 .btnsControl a:hover {
   opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    box-shadow: unset;
+  }
+  .vuejs {
+    /* border-bottom: 1px solid #ccc; */
+  }
+  .vuejs,
+  .appCyclone {
+    width: 100%;
+  }
 }
 </style>

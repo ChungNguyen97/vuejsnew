@@ -1,36 +1,42 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <header class="header">
-      <div class="left">
-        <a href="/">Home</a>
-        <a href="/task">Task</a>
-        <a href="about">About</a>
-        <a href="product">Product</a>
-      </div>
-      <div class="right">
-        <a href="">Register</a>
-        <a href="">Login</a>
+      <div class="header__content">
+        <div class="left">
+          <!-- <router-link :to="{ name: 'Hello' }">Home</router-link> -->
+          <router-link to="/">Home</router-link>
+          <router-link to="/about">About</router-link>
+          <router-link to="/task">Task</router-link>
+          <router-link to="/product">Product</router-link>
+        </div>
+        <div class="right">
+          <router-link to="register">Register</router-link>
+          <router-link to="login">Login</router-link>
+        </div>
       </div>
     </header>
-    <router-view />
+    <main id="main">
+      <router-view />
+    </main>
   </div>
 </template>
 
 <script>
-
 export default {
-  
   name: "App",
 };
 </script>
+
 
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 1200px;
+  margin: 0 auto;
+}
+main#main{
+  width: 1200px;
   margin: 0 auto;
 }
 * {
@@ -38,13 +44,16 @@ export default {
   margin: 0;
   box-sizing: border-box;
 }
-header.header {
+.header {
   background: #333;
+}
+.header__content {
   width: 100%;
   margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
-  padding: 4px 8px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .header a {
   color: #fff;
@@ -52,10 +61,10 @@ header.header {
   font-size: 1.1rem;
   font-weight: 600;
   display: inline-block;
-  padding: 4px 12px;
+  padding: 8px 12px;
 }
 .header a:hover {
   color: blue;
-  background-color: #fff;
+  background-color: #ccc;
 }
 </style>
