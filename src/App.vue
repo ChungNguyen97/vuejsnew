@@ -4,6 +4,7 @@
     <header class="header">
       <div class="left">
         <a href="/">Home</a>
+        <a href="/task">Task</a>
         <a href="about">About</a>
         <a href="product">Product</a>
       </div>
