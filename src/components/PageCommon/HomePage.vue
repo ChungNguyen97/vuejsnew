@@ -30,8 +30,6 @@ export default {
     return {
       title: "Vuejs demo by",
       fullname: "Nguyen Van Chung",
-      data: [],
-    
     };
   },
   methods: {
